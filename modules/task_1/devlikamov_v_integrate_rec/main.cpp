@@ -81,6 +81,17 @@ TEST(Integrate_rec, Test_Integrate_rec_6) {
     ASSERT_NEAR(answer, ans, 1e-5);
 }
 
+TEST(Integrate_rec, Test_Integrate_rec_7) {
+    double a = 0.0, b = 0.0;
+    double c = 0.0, d = 1.0;
+    double h = 0.001;
+    double answer = 0.0;
+
+    double ans = integral(a, b, c, d, h, f2);
+
+    ASSERT_NEAR(answer, ans, 1e-5);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
