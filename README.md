@@ -1,5 +1,5 @@
-![Build application](https://github.com/learning-process/parallel_programming_course/workflows/Build%20application/badge.svg?branch=master)
-[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6ImxlYXJuaW5nLXByb2Nlc3MiLCJyZXBvMSI6InBhcmFsbGVsX3Byb2dyYW1taW5nX2NvdXJzZSIsImluY2x1ZGVMaW50IjpmYWxzZSwiYXV0aG9ySWQiOjI0ODQyLCJpYXQiOjE2MDU0NTM3MDV9.CAHpnB6YIOUynZL6wXqSHSQfztfAGhtyqhEpbPeP9XA)](https://www.deepcode.ai/app/gh/learning-process/parallel_programming_course/_/dashboard?utm_content=gh%2Flearning-process%2Fparallel_programming_course)
+![Build application](https://github.com/allnes/pp_2021_spring_math/workflows/Build%20application/badge.svg?branch=master)
+[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6ImFsbG5lcyIsInJlcG8xIjoicHBfMjAyMV9zcHJpbmdfbWF0aCIsImluY2x1ZGVMaW50IjpmYWxzZSwiYXV0aG9ySWQiOjI0ODQyLCJpYXQiOjE2MTUyNjU0MTZ9.htDO_lTDoDA1boZ8-vFO7OlAgbw9bwdeNCiTVqyfwTY)](https://www.deepcode.ai/app/gh/allnes/pp_2021_spring_math/_/dashboard?utm_content=gh%2Fallnes%2Fpp_2021_spring_math)
 
 # Parallel Programming Course
 
