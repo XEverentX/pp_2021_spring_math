@@ -1,4 +1,5 @@
 // Copyright 2021 Devlikamov Vladislav
+#include <cmath>
 #include <gtest/gtest.h>
 #include "./integrate_rec_omp.h"
 
