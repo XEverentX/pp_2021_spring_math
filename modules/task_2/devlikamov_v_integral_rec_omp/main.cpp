@@ -1,6 +1,6 @@
 // Copyright 2021 Devlikamov Vladislav
-#include <cmath>
 #include <gtest/gtest.h>
+#include <cmath>
 #include "./integrate_rec_omp.h"
 
 double f(double x, double y) {
