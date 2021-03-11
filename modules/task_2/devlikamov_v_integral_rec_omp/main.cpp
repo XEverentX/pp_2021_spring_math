@@ -1,7 +1,9 @@
 // Copyright 2021 Devlikamov Vladislav
 #include <gtest/gtest.h>
 #include <cmath>
+#include <omp.h>
 #include "./integrate_rec_omp.h"
+#define SHOW 0
 
 double f(double x, double y) {
     return sin(x + y)*cos(x);
@@ -21,7 +23,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_1) {
     double h = 0.001;
     double answer = -0.0813902;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f);
+    double end = omp_get_wtime(); 
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -32,7 +38,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_2) {
     double h = 0.0005;
     double answer = 250/3.0;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f1);
+    double end = omp_get_wtime(); 
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -43,7 +53,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_3) {
     double h = 0.001;
     double answer = 115/6.0;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f1);
+    double end = omp_get_wtime(); 
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -54,7 +68,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_4) {
     double h = 0.001;
     double answer = 0.632261;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f);
+    double end = omp_get_wtime();
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -65,7 +83,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_5) {
     double h = 0.001;
     double answer = 0.480587;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f2);
+    double end = omp_get_wtime();
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -76,7 +98,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_6) {
     double h = 0.001;
     double answer = -4.74391;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f2);
+    double end = omp_get_wtime();
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -87,7 +113,11 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_7) {
     double h = 0.001;
     double answer = 0.0;
 
+    double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f2);
+    double end = omp_get_wtime();
+
+    if (SHOW) printf("Work took %f seconds\n", end - start);
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
