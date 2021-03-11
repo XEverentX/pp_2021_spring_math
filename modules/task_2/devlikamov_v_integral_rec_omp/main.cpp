@@ -25,7 +25,7 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_1) {
 
     double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f);
-    double end = omp_get_wtime(); 
+    double end = omp_get_wtime();
 
     if (SHOW) printf("Work took %f seconds\n", end - start);
 
@@ -40,7 +40,7 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_2) {
 
     double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f1);
-    double end = omp_get_wtime(); 
+    double end = omp_get_wtime();
 
     if (SHOW) printf("Work took %f seconds\n", end - start);
 
@@ -55,7 +55,7 @@ TEST(Integrate_rec_omp, Test_Integrate_rec_omp_3) {
 
     double start = omp_get_wtime();
     double ans = integral(a, b, c, d, h, f1);
-    double end = omp_get_wtime(); 
+    double end = omp_get_wtime();
 
     if (SHOW) printf("Work took %f seconds\n", end - start);
 
