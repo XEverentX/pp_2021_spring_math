@@ -1,7 +1,7 @@
 // Copyright 2021 Devlikamov Vladislav
 #include <gtest/gtest.h>
-#include <cmath>
 #include <omp.h>
+#include <cmath>
 #include "./integrate_rec_omp.h"
 #define SHOW 0
 
