@@ -1,8 +1,8 @@
 // Copyright 2021 Devlikamov Vladislav
 
 #include <gtest/gtest.h>
-#include <cmath>
 #include <tbb/tick_count.h>
+#include <cmath>
 #include "./integrate_rec_tbb.h"
 #define SHOW 0
 
@@ -28,7 +28,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_1) {
     double ans = integral(a, b, c, d, h, f);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -43,7 +43,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_2) {
     double ans = integral(a, b, c, d, h, f1);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -58,7 +58,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_3) {
     double ans = integral(a, b, c, d, h, f1);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -73,7 +73,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_4) {
     double ans = integral(a, b, c, d, h, f);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -88,7 +88,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_5) {
     double ans = integral(a, b, c, d, h, f2);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -103,7 +103,7 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_6) {
     double ans = integral(a, b, c, d, h, f2);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
 
     ASSERT_NEAR(answer, ans, 1e-5);
 }
@@ -118,8 +118,8 @@ TEST(Integrate_rec, Test_Integrate_rec_tbb_7) {
     double ans = integral(a, b, c, d, h, f2);
     tbb::tick_count end = tbb::tick_count::now();
 
-    if (SHOW) printf("Work took %f seconds\n",(end-start).seconds());
-    
+    if (SHOW) printf("Work took %f seconds\n", (end-start).seconds());
+
     ASSERT_NEAR(answer, ans, 1e-5);
 }
 
