@@ -18,7 +18,6 @@ double integral(double a1, double b1, double a2, double b2, double h, double (*f
                     }
                 }
                 return res;
-        }, std::plus<double>()
-    );
+        }, std::plus<double>());
     return result;
 }
