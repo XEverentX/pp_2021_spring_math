@@ -6,8 +6,8 @@ std::vector<int> getRandomVector(int size) {
     std::random_device dev;
     std::mt19937 gen(dev());
     std::vector<int> vec(size);
-    for (int  i = 0; i < size; i++) { 
-        vec[i] = gen() % 100; 
+    for (int  i = 0; i < size; i++) {
+        vec[i] = gen() % 100;
     }
     return vec;
 }
@@ -65,7 +65,7 @@ std::vector<int> evenOrOddMerge(const std::vector<int>& vec1, const std::vector<
             res.push_back(vec2[i]);
         }
     }
-    
+
     return res;
 }
 
@@ -97,7 +97,7 @@ std::vector<int> mergeBatcher(const std::vector<int>& vec1, const std::vector<in
             res.push_back(vec2[i + 1]);
         }
     } else {
-        throw std::exception("Vector sizes must be equal or different by 2"); 
+        throw std::runtime_error("Vector sizes must be equal or different by 2");
     }
 
     for (int i = 1; i < res_size; i++) {
@@ -116,7 +116,7 @@ std::vector<int> sortShellWithMergeBatcher(const std::vector<int>& vec) {
     std::vector<int> vec1, vec2;
     vec1.reserve(half_size);
     vec2.reserve(half_size);
-    
+
     for (int i = 0; i < half_size; i++) {
         vec1.push_back(vec[i]);
     }
