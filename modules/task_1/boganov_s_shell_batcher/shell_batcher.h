@@ -5,6 +5,7 @@
 #include <vector>
 #include <random>
 #include <algorithm>
+#include <stdexcept>
 
 enum class mergeType { even, odd };
 
