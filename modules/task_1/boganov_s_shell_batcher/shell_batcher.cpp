@@ -28,7 +28,7 @@ std::vector<int> sortShell(const std::vector<int>& vec) {
 std::vector<int> evenOrOddMerge(const std::vector<int>& vec1, const std::vector<int>& vec2, const mergeType& type) {
     int size1 = static_cast<int>(vec1.size());
     int size2 = static_cast<int>(vec2.size());
-    int res_size, i1, i2;
+    int res_size = 0, i1 = 0, i2 = 0;
 
     switch (type) {
         case mergeType::even:
