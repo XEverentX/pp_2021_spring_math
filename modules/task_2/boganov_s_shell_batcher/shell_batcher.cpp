@@ -6,8 +6,8 @@ std::vector<int> getRandomVector(int size) {
     std::mt19937 gen;
     gen.seed(static_cast<unsigned int>(time(0)));
     std::vector<int> vec(size);
-    for (int i = 0; i < size; i++) { 
-        vec[i] = gen() % 100; 
+    for (int i = 0; i < size; i++) {
+        vec[i] = gen() % 100;
     }
     return vec;
 }
@@ -35,7 +35,7 @@ std::vector<std::vector<int>> separatedVector(const std::vector<int>& vec, int n
     int start = 0, finish = size_part;
     int count_i = std::min(size, number_of_parts);
 
-    for (int i = 0; i < number_of_parts; i++) {
+    for (int i = 0; i < count_i; i++) {
         if (rem > 0) {
             finish += 1;
             rem--;
@@ -75,7 +75,7 @@ std::vector<int> evenOddhMergeBatcherSeq(const std::vector<std::vector<int>>& ve
     std::vector<int> evenTemp, oddTemp;
 
     int k = number_of_parts;
-    
+
     while (k != 1) {
         std::vector<std::vector<int>> temp2(k);
         std::vector<std::pair<std::vector<int>, std::vector<int>>> temp_pair(k / 2);
@@ -91,7 +91,7 @@ std::vector<int> evenOddhMergeBatcherSeq(const std::vector<std::vector<int>>& ve
             evenTemp = evenOrOddMerge(temp_pair[p].first, temp_pair[p].second, mergeType::even);
             oddTemp = evenOrOddMerge(temp_pair[p].first, temp_pair[p].second, mergeType::odd);
             temp2[p] = mergeBatcher(evenTemp, oddTemp);
-        }    
+        }
 
         if (k % 2 == 1) {
             temp2[p] = temp1[k - 1];
@@ -108,7 +108,7 @@ std::vector<int> evenOddhMergeBatcherOMP(const std::vector<std::vector<int>>& ve
     std::vector<int> evenTemp, oddTemp;
 
     int k = number_of_parts;
-    
+
     while (k != 1) {
         std::vector<std::vector<int>> temp2(k);
         std::vector<std::pair<std::vector<int>, std::vector<int>>> temp_pair(k / 2);
@@ -125,7 +125,7 @@ std::vector<int> evenOddhMergeBatcherOMP(const std::vector<std::vector<int>>& ve
             evenTemp = evenOrOddMerge(temp_pair[p].first, temp_pair[p].second, mergeType::even);
             oddTemp = evenOrOddMerge(temp_pair[p].first, temp_pair[p].second, mergeType::odd);
             temp2[p] = mergeBatcher(evenTemp, oddTemp);
-        }    
+        }
 
         if (k % 2 == 1) {
             temp2[p] = temp1[k - 1];
