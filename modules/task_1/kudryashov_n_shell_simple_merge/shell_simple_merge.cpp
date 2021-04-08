@@ -13,8 +13,9 @@ std::vector<int> shell_sort(const std::vector<int>& in_vect,
     bool(*compare)(int, int)) {
     std::vector<int> in(in_vect);
 
-    for (int s = in.size() / 2; s > 0; s /= 2) {
-        for (int i = s; i < in.size(); i++) {
+    int size = static_cast<int>(in.size());
+    for (int s = size / 2; s > 0; s /= 2) {
+        for (int i = s; i < size; i++) {
             for (int j = i - s; j >= 0 && !compare(in[j], in[j+s]); j -= s) {
                 std::swap(in[j], in[j + s]);
             }
@@ -27,12 +28,12 @@ std::vector<int> shell_sort(const std::vector<int>& in_vect,
 
 std::vector<int> getRandomVect(unsigned int size) {
     std::mt19937 gen;
-    gen.seed(time(0));
+    gen.seed(static_cast<unsigned int>(time(0)));
 
     std::vector<int> res;
     res.resize(size);
 
-    for (int i = 0; i < size; i++) {
+    for (unsigned int i = 0; i < size; i++) {
         res[i] = gen();
     }
 
@@ -43,18 +44,20 @@ std::vector<int> merge(std::vector<int> a, std::vector<int> b,
     bool(*compare)(int, int)) {
     int i = 0, j = 0;
     std::vector<int> res;
-    int full_size = a.size() + b.size();
+    int a_size = static_cast<int>(a.size());
+    int b_size = static_cast<int>(b.size());
+    int full_size = a_size + b_size;
     for (int k = 0; k < full_size; k++) {
-        if (i == a.size()) {
-            while (j < b.size()) {
+        if (i == a_size) {
+            while (j < b_size) {
                 res.push_back(b[j]);
                 j++;
             }
             break;
         }
 
-        if (j == b.size()) {
-            while (i < a.size()) {
+        if (j == b_size) {
+            while (i < a_size) {
                 res.push_back(a[i]);
                 i++;
             }
@@ -77,8 +80,9 @@ std::vector<int> shell_sort_simple_merge(const std::vector<int>& in_vect,
     int parts, bool(*compare)(int, int)) {
     std::vector<std::vector<int>> temp;
     std::vector<int> in(in_vect);
-    int partial_size = in.size() / parts;
-    int partial_size_remain = in.size() % parts;
+    int in_size = static_cast<int>(in.size());
+    int partial_size = in_size / parts;
+    int partial_size_remain = in_size % parts;
 
     if (partial_size_remain == 0) {
         temp.resize(parts);
@@ -87,10 +91,10 @@ std::vector<int> shell_sort_simple_merge(const std::vector<int>& in_vect,
     }
 
     int i, j;
-
+    int temp_size = static_cast<int>(temp.size());
     // Splitting into parts to sort.
 
-    for (i = 0; i < temp.size() - 1; i++) {
+    for (i = 0; i < temp_size - 1; i++) {
         for (j = 0; j < partial_size; j++) {
             temp[i].push_back(in[i * partial_size + j]);
         }
@@ -110,13 +114,13 @@ std::vector<int> shell_sort_simple_merge(const std::vector<int>& in_vect,
 
     // Sorting with Shell.
 
-    for (int k = 0; k < temp.size(); k++) {
+    for (int k = 0; k < temp_size; k++) {
         temp[k] = shell_sort(temp[k], compare);
     }
 
     // Merging like tree.
 
-    int k = temp.size();
+    int k = static_cast<int>(temp.size());
     std::vector<std::vector<int>> temp2;
 
     while (k != 1) {
