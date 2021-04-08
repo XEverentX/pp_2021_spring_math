@@ -1,7 +1,6 @@
 // Copyright 2021 Arisova Anastasia
-
-#include "./sobel_operator.h"
 #include <gtest/gtest.h>
+#include "./sobel_operator.h"
 
 TEST(SobelOperatorSeq, EmptyMatrix) {
     MyImage image(0, 0);

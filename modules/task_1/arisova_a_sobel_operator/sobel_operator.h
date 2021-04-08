@@ -29,7 +29,6 @@ struct MyImage {
             return true;
         return false;
     }
-
 };
 
 inline int clamp(int value, int min, int max) {
