@@ -2,64 +2,64 @@
 
 #include <gtest/gtest.h>
 #include "./shell_simple_merge.h"
-#include <iostream>
 
 
 TEST(ShellMerge, shellSortTestSize10) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(10);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort(shell, cmp_ascend);
+    res = shell_sort(shell, cmp_ascend);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 TEST(ShellMerge, shellSortTestSize100) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(100);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort(shell, cmp_ascend);
+    res = shell_sort(shell, cmp_ascend);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 TEST(ShellMerge, shellSortTestSize200) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(200);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort(shell);
+    res = shell_sort(shell);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 TEST(ShellMerge, mergeTest1) {
     // Arrange
 
-    std::vector<int> vec1 {1, 2, 3}, vec2 {4, 5, 6}, merge_res, true_res {1, 2, 3, 4, 5, 6};
+    std::vector<int> vec1 {1, 2, 3}, vec2 {4, 5, 6},
+        merge_res, true_res {1, 2, 3, 4, 5, 6};
 
     // Act
 
@@ -87,7 +87,8 @@ TEST(ShellMerge, mergeTest2) {
 TEST(ShellMerge, mergeTest3) {
     // Arrange
 
-    std::vector<int> vec1 {100, 200, 201}, vec2 {4}, merge_res, true_res {4, 100, 200, 201};
+    std::vector<int> vec1 {100, 200, 201}, vec2 {4},
+        merge_res, true_res {4, 100, 200, 201};
 
     // Act
 
@@ -101,7 +102,8 @@ TEST(ShellMerge, mergeTest3) {
 TEST(ShellMerge, mergeTestArraySize) {
     // Arrange
 
-    std::vector<int> vec1 {100, 200, 201}, vec2 {4}, merge_res, true_res {4, 100, 200, 201};
+    std::vector<int> vec1 {100, 200, 201}, vec2 {4},
+        merge_res, true_res {4, 100, 200, 201};
 
     // Act
 
@@ -112,55 +114,71 @@ TEST(ShellMerge, mergeTestArraySize) {
     ASSERT_EQ(merge_res.size(), true_res.size());
 }
 
+TEST(ShellMerge, shellSortSimpleMergeSmall) {
+    // Arrange
+
+    std::vector<int> vec1 {100, 200, 201, 4}, res;
+    std::vector<int> qsort(vec1);
+
+    // Act
+
+    std::sort(qsort.begin(), qsort.end(), cmp_ascend);
+    res = shell_sort_simple_merge(vec1, 1);
+
+    // Assert
+
+    ASSERT_EQ(qsort == res, true);
+}
+
 TEST(ShellMerge, shellSortSimpleMerge_1_part) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(12);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort_simple_merge(shell, 1);
+    res = shell_sort_simple_merge(shell, 1);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 TEST(ShellMerge, shellSortSimpleMerge_3_parts) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(10);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort_simple_merge(shell, 3);
+    res = shell_sort_simple_merge(shell, 3);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 TEST(ShellMerge, shellSortSimpleMerge_8_parts) {
     // Arrange
 
-    std::vector<int> qsort, shell;
+    std::vector<int> qsort, shell, res;
     qsort = getRandomVect(1000);
     shell = qsort;
 
     // Act
 
     std::sort(qsort.begin(), qsort.end(), cmp_ascend);
-    shell_sort_simple_merge(shell, 8);
+    res = shell_sort_simple_merge(shell, 8);
 
     // Assert
 
-    ASSERT_EQ(qsort == shell, true);
+    ASSERT_EQ(qsort == res, true);
 }
 
 int main(int argc, char **argv) {
