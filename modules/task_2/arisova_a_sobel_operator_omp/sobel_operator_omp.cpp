@@ -31,12 +31,13 @@ MyImage SobelOperatorOmp(const MyImage& sourceImage) {
 }
 
 int clamp(int value, int min, int max) {
-    if (value > max)
+    if (value > max) {
         return max;
-    else {
-        if (value < min)
+    } else {
+        if (value < min) {
             return min;
-        else
+        } else {
             return value;
+        }
     }
 }
