@@ -1,5 +1,6 @@
 // Copyright 2021 Vedrukov Pavel
 
+#include <omp.h>
 #include <iostream>
 #include "../../../modules/task_2/vedrukov_p_linear_filtering_omp/linear_filtering.h"
 
@@ -23,8 +24,7 @@ int radius, double sigma) {
     std::vector<std::vector<unsigned int>> res = Image;
     int h = Image.size();
     int w = Image[0].size();
-    omp_set_num_threads(4);
-    #pragma omp parallel for shared(Image, res)
+    #pragma omp parallel for
         for (int i = 0; i < h; ++i) {
             for (int j = 0; j < w; ++j) {
                 res[i][j] = 0;
