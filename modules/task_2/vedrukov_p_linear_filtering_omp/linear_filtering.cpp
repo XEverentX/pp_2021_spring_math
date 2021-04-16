@@ -23,8 +23,8 @@ int radius, double sigma) {
     std::vector<std::vector<unsigned int>> res = Image;
     int h = Image.size();
     int w = Image[0].size();
-    omp_set_num_threads(6);
-    #pragma omp parallel for
+    omp_set_num_threads(4);
+    #pragma omp parallel for shared(Image, res) private(h, w)
         for (int i = 0; i < h; ++i) {
             for (int j = 0; j < w; ++j) {
                 res[i][j] = 0;
