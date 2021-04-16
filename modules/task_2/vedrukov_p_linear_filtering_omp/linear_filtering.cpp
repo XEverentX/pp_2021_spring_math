@@ -23,13 +23,15 @@ std::vector<std::vector<unsigned int>> Image,
 int radius, double sigma) {
     std::vector<std::vector<unsigned int>> res = Image;
     #pragma omp parallel for
-        for (int i = 0; i < Image.size(); ++i) {
-            for (int j = 0; j < Image[0].size(); ++j) {
+        for (int i = 0; i < static_cast<int>(Image.size()); ++i) {
+            for (int j = 0; j < static_cast<int>(Image[0].size()); ++j) {
                 res[i][j] = 0;
                 for (int y = -radius; y <= radius; ++y) {
                     for (int x = -radius; x <= radius; ++x) {
-                        if ((j + x) > 0 && (j + x) < Image[0].size() &&
-                            (i + y) > 0 && (i + y) < Image.size()) {
+                        if ((j + x) > 0 && (j + x) <
+                            static_cast<int>(Image[0].size()) &&
+                            (i + y) > 0 && (i + y) <
+                            static_cast<int>(Image.size())) {
                             res[i][j] +=
                             static_cast<unsigned int>(Image[i + y][j + x] *
                                 exp(-(x * x + y * y) / 2 / (sigma * sigma)) /
