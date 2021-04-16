@@ -22,7 +22,7 @@ std::vector<std::vector<unsigned int>> gauss_filtering(
 std::vector<std::vector<unsigned int>> Image,
 int radius, double sigma) {
     std::vector<std::vector<unsigned int>> res = Image;
-    #pragma omp parallel for
+    #pragma omp parallel for shared(res, Image)
         for (int i = 0; i < static_cast<int>(Image.size()); ++i) {
             for (int j = 0; j < static_cast<int>(Image[0].size()); ++j) {
                 res[i][j] = 0;
