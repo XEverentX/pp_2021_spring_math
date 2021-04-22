@@ -6,7 +6,7 @@
 #include <fstream>
 #include <random>
 #include <ctime>
-#include "../../../modules/task_2/vedrukov_p_linear_filtering_omp/linear_filtering.h"
+#include "../../../modules/task_3/vedrukov_p_linear_filtering_tbb/linear_filtering.h"
 
 TEST(linear_filtering, test_1) {
     std::vector<std::vector<unsigned int>> a = get_random_matrix(20, 20);
