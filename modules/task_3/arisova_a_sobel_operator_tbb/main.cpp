@@ -97,41 +97,6 @@ TEST(SobelOperatorTBB, ApplyingFilterImage1000x1000) {
     ASSERT_EQ(image1, image2);
 }
 
-TEST(SobelOperatorTBB, ApplyingFilterImage15000x15000) {
-    MyImage image1(15000, 15000);
-    MyImage image2(15000, 15000);
-
-    const MyImage &ref_img = image1;
-
-    tbb::tick_count t1 = tbb::tick_count::now();
-    image2 = SobelOperatorTBB(ref_img);
-    tbb::tick_count t2 = tbb::tick_count::now();
-
-    if (time) {
-        printf("Work took %f seconds\n", (t2 - t1).seconds());
-    }
-
-    ASSERT_EQ(image1, image2);
-}
-
-TEST(SobelOperatorTBB, ApplyingFilterImage20000x20000) {
-    MyImage image1(20000, 20000);
-    MyImage image2(20000, 20000);
-
-    const MyImage &ref_img = image1;
-
-    tbb::tick_count t1 = tbb::tick_count::now();
-    image2 = SobelOperatorTBB(ref_img);
-    tbb::tick_count t2 = tbb::tick_count::now();
-
-    if (time) {
-        printf("Work took %f seconds\n", (t2 - t1).seconds());
-    }
-
-    ASSERT_EQ(image1, image2);
-}
-
-
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
