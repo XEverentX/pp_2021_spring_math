@@ -46,7 +46,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage3x3) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -63,7 +63,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage7x7) {
                                 34, 45, 26, 38, 20, 12, 22, 24, 27, 30,
                                 28, 35, 215, 239, 255, 110, 28, 5, 255, 143,
                                 148, 172, 53, 8, 37, 217, 63, 22, 89, 107,
-                                67, 27, 32, 29, 25, 14, 97, 22, 18,};
+                                67, 27, 32, 29, 25, 14, 97, 22, 18};
     MyImage image1(input, 7, 7);
     MyImage image2(7, 7);
 
@@ -73,7 +73,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage7x7) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -100,7 +100,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage10x10) {
                                 255, 213, 255, 104, 255, 255, 255, 93, 162, 37,
                                 255, 232, 195, 255, 253, 255, 253, 191, 255, 111,
                                 22, 201, 188, 255, 131, 152, 255, 255, 166, 255,
-                                255, 239, 197, 55, 65, 114, 255, 243, 164, 255,};
+                                255, 239, 197, 55, 65, 114, 255, 243, 164, 255};
 
     MyImage image1(input, 10, 10);
     MyImage image2(10, 10);
@@ -111,7 +111,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage10x10) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -128,7 +128,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage1000x1000) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -145,7 +145,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage10000x10000) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -162,7 +162,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage15000x15000) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
@@ -179,7 +179,7 @@ TEST(SobelOperatorTBB, ApplyingFilterImage20000x20000) {
     image2 = SobelOperatorTBB(ref_img);
     tbb::tick_count t2 = tbb::tick_count::now();
 
-    if(time) {
+    if (time) {
         printf("Work took %f seconds\n", (t2 - t1).seconds());
     }
 
