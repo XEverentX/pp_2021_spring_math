@@ -30,7 +30,7 @@ MyImage SobelOperatorTBB(const MyImage& sourceImage) {
                     filterImage(ii, jj) = clamp(static_cast<int>(std::sqrt(xResult * xResult + yResult * yResult)),
                                                     0, 255);
                 }
-        } );
+        });
     return filterImage;
 }
 
