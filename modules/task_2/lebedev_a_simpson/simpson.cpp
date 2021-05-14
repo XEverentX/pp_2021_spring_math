@@ -23,15 +23,15 @@ double integrate(std::function<double(double, double)> f,
                  double b,
                  double c,
                  double d,
-                 uint32_t nx,
-                 uint32_t ny) {
+                 int nx,
+                 int ny) {
     double hx = (b - a) / nx;
     double hy = (d - c) / ny;
 
     double result = 0.;
     #pragma omp parallel for reduction(+ : result)
-    for (uint32_t i = 0; i < nx; i++) {
-        for (uint32_t j = 0; j < ny; j++) {
+    for (int i = 0; i < nx; i++) {
+        for (int j = 0; j < ny; j++) {
             double x = a + hx * i;
             double y = c + hy * j;
             result += calculate_simpson(f, x, y, hx / 2., hy / 2.);

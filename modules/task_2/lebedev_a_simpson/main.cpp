@@ -24,8 +24,8 @@ TEST(simpson_f1, test_simson_1) {
     double b = 1.;
     double c = 0.;
     double d = 1.;
-    uint32_t nx = 1000;
-    uint32_t ny = 10000;
+    int nx = 1000;
+    int ny = 10000;
 
     double expected = 0.476934968390048;
 
@@ -37,8 +37,8 @@ TEST(simpson_f1, test_simson_2) {
     double b = 15.1;
     double c = 100.;
     double d = 112.5;
-    uint32_t nx = 1000;
-    uint32_t ny = 1000;
+    int nx = 1000;
+    int ny = 1000;
 
     double expected = 9042373.68352822;
 
@@ -50,8 +50,8 @@ TEST(simpson_f2, test_simson_1) {
     double b = 1.;
     double c = 0.;
     double d = 1.;
-    uint32_t nx = 1000;
-    uint32_t ny = 1000;
+    int nx = 1000;
+    int ny = 1000;
 
     double expected = -0.583333333333333;
 
@@ -63,8 +63,8 @@ TEST(simpson_f2, test_simson_2) {
     double b = 15.1;
     double c = 100.;
     double d = 112.5;
-    uint32_t nx = 1000;
-    uint32_t ny = 1000;
+    int nx = 1000;
+    int ny = 1000;
 
     double expected = -948794.4215625;
 
@@ -76,8 +76,8 @@ TEST(simpson_f3, test_simson_1) {
     double b = 1.;
     double c = 0.;
     double d = 1.;
-    uint32_t nx = 1000;
-    uint32_t ny = 1000;
+    int nx = 1000;
+    int ny = 1000;
 
     double expected = 0.934370019788488;
 
@@ -89,8 +89,8 @@ TEST(simpson_f3, test_simson_2) {
     double b = 15.1;
     double c = 100.;
     double d = 112.5;
-    uint32_t nx = 1000;
-    uint32_t ny = 1000;
+    int nx = 1000;
+    int ny = 1000;
 
     double expected = 5698.37277067144;
 

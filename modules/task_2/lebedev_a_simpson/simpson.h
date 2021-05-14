@@ -10,7 +10,7 @@ double integrate(std::function<double(double, double)> f,
                  double b,
                  double c,
                  double d,
-                 uint32_t nx,
-                 uint32_t ny);
+                 int nx,
+                 int ny);
 
 #endif  // MODULES_TASK_2_LEBEDEV_A_SIMPSON_SIMPSON_H_
